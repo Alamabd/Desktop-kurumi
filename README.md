@@ -1,5 +1,5 @@
 # Desktop-kurumi
-kurumi anime beautify desktop screen created with python pyth5
+kurumi anime beautify desktop screen created with python pyqt5
 
 ## Preview📸
 ![Screenshot from 2023-05-01 16-33-48](https://github.com/Alamabd/Desktop-kurumi/assets/115331322/1276b2da-888a-43aa-9da5-80385fc57867)
