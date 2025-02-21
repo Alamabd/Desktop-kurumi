@@ -1,15 +1,13 @@
 import sys
 import random
-# from playsound import playsound
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QLabel
 from PyQt5.QtCore import Qt, QTimer, QPoint
 from PyQt5.QtGui import QIcon, QMovie
+from PyQt5.QtMultimedia import QSound
 
 class MainWindow(QMainWindow, QWidget):
     def __init__(self):
         self.path = ""
-
-        #QTimer.singleShot(3000, lambda: playsound(self.path + "audio/Okaeri onii Chan.mp3"))
 
         # setting window
         super(MainWindow, self).__init__()
@@ -30,9 +28,8 @@ class MainWindow(QMainWindow, QWidget):
         # random gif with interval
         self.timer = QTimer()
         self.timer.timeout.connect(lambda: self.random(2, 12))
-        self.timer.setInterval(7000)
+        self.timer.setInterval(8000)
         self.timer.start()
-        
 
     # gravity
     def gravity(self):
@@ -59,34 +56,34 @@ class MainWindow(QMainWindow, QWidget):
         
     # random
     def random(self, min, max):
-        r = 0
-        r = random.randrange(min, max)
-        if r == 0:
+        value = 0
+        value = random.randrange(min, max)
+        if value == 0:
             self.gif( self.path + "gif/no.gif")
-        elif r == 1:
+        elif value == 1:
             self.gif( self.path + "gif/fly.gif")
-        elif r == 2:
-            self.gif( self.path + "gif/love.gif")
-        elif r == 3:
-            self.gif( self.path + "gif/popcorn.gif")
-        elif r == 4:
-            self.gif( self.path + "gif/oke.gif")
-        elif r == 5:
-            self.gif( self.path + "gif/i_love_you.gif")
-
-        elif r == 6:
-            self.gif( self.path + "gif/arrow_love.gif")
-        elif r == 7:
-            self.gif( self.path + "gif/boring.gif")
-        elif r == 8:
-            self.gif( self.path + "gif/hello.gif")
-        elif r == 9:
+        elif value == 2:
+            QTimer.singleShot(0, lambda: QSound.play(self.path + "audio/anime-chill.wav"))
             self.gif( self.path + "gif/love2.gif")
-        elif r == 10:
+        elif value == 3:
+            self.gif( self.path + "gif/popcorn.gif")
+        elif value == 4:
+            self.gif( self.path + "gif/oke.gif")
+        elif value == 5:
+            self.gif( self.path + "gif/i_love_you.gif")
+        elif value == 6:
+            self.gif( self.path + "gif/arrow_love.gif")
+        elif value == 7:
+            self.gif( self.path + "gif/boring.gif")
+        elif value == 8:
+            self.gif( self.path + "gif/hello.gif")
+        elif value == 9:
+            self.gif( self.path + "gif/love.gif")
+        elif value == 10:
             self.gif( self.path + "gif/sad.gif")
-        elif r == 11:
+        elif value == 11:
             self.gif( self.path + "gif/selfie.gif")
-        elif r == 12:
+        elif value == 12:
             self.gif( self.path + "gif/weak.gif")
 
     def gif(self, file):
@@ -94,9 +91,7 @@ class MainWindow(QMainWindow, QWidget):
         self.movie = QMovie(file)
         self.label.setMovie(self.movie)
         self.movie.setSpeed(50)
-        self.movie.start()
-
-    
+        self.movie.start()    
 
     # event input
     def mousePressEvent(self, event):
