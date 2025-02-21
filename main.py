@@ -1,13 +1,13 @@
 import sys
 import random
-from playsound import playsound
+# from playsound import playsound
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QLabel
 from PyQt5.QtCore import Qt, QTimer, QPoint
 from PyQt5.QtGui import QIcon, QMovie
 
 class MainWindow(QMainWindow, QWidget):
     def __init__(self):
-        self.path = "Documents/python/kurumi-desktop/"
+        self.path = ""
 
         #QTimer.singleShot(3000, lambda: playsound(self.path + "audio/Okaeri onii Chan.mp3"))
 
